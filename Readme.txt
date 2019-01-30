@@ -1,0 +1,1 @@
+This is a out-of-the-box ready to use latex-template for a thesis/elaboration/essay/paper/etc.
