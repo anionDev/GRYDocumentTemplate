@@ -1,0 +1,32 @@
+\documentclass[10pt]{letter}
+\usepackage{geometry} 
+\geometry{paper=a4paper, top=0cm, bottom=3cm, left=2.5cm, right=2cm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{stix}
+\usepackage[german]{babel}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{listings}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+\usepackage{microtype}
+\address{\sendername \\ \senderaddressline \\ \sendercity}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\begin{letter}{\receivername \\ \receiveraddressline \\ \receivercity}
+
+\opening{\textbf{\lettertitle}}
+
+Dear \receivername,
+
+\content
+
+\newline\newline\newline\newline
+With kind regards,
+\newline\newline\newline\newline
+\sendername
+
+
+\end{letter}
+\end{document}
