@@ -19,7 +19,8 @@ if(os.path.isdir(new_document_folder)):
 os.makedir(new_document_folder)
 os.chdir(new_document_folder)
 execute("git", "init")
-execute("git", "submodule add https://github.com/anionDev/formalLetter.git template")
+template_folder=os.path.dirname(os.path.abspath(__file__))
+execute("git", "submodule add "+template_folder+" template")
 content_file="documentcontent.tex"
 content_file_content="TODO"
 with open(content_file,'w') as f:
