@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 import subprocess
+import shutil
 parser = argparse.ArgumentParser(description='Creates a new formal letter.')
 
 parser.add_argument('folder_for_new_document', help='Specifies the folder where the new document should be stored')
@@ -34,6 +35,7 @@ with open(content_file,'w') as f:
     f.write(content_file_content)
 with open("License.txt",'w') as f:
     f.write("Only the author of the content of '"+content_file+"' is allowed to use the content of this repository.")
+shutil.copyfile(".gitignore",os.path.join(new_document_folder,".gitignore"))
 os.chdir("template")
 execute("Python", "BuildDocument.py")
 os.chdir("..")
