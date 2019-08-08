@@ -22,7 +22,14 @@ os.chdir(new_document_folder)
 execute("git", "init")
 execute("git", "submodule add "+template_folder+" template")
 content_file="documentcontent.tex"
-content_file_content="TODO"
+content_file_content="""\\newcommand{\\sendername}{sendername}
+\\newcommand{\\senderaddressline}{senderaddressline}
+\\newcommand{\\sendercity}{sendercity}
+\\newcommand{\\receivername}{receivername}
+\\newcommand{\\receiveraddressline}{receiveraddressline}
+\\newcommand{\\receivercity}{receivercity}
+\\newcommand{\\lettertitle}{"""+args.document_name+"""}
+\\newcommand{\\content}{content}"""
 with open(content_file,'w') as f:
     f.write(content_file_content)
 with open("License.txt",'w') as f:
