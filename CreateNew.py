@@ -35,9 +35,10 @@ with open(content_file,'w') as f:
     f.write(content_file_content)
 with open("License.txt",'w') as f:
     f.write("Only the author of the content of '"+content_file+"' is allowed to use the content of this repository.")
-shutil.copyfile(".gitignore",os.path.join(new_document_folder,".gitignore"))
+shutil.copyfile(os.path.join(template_folder,".gitignore"),os.path.join(new_document_folder,".gitignore"))
 os.chdir("template")
 execute("Python", "BuildDocument.py")
 os.chdir("..")
+execute("git", "add -A")
 execute("git", 'commit -m "Initial commit"')
 
