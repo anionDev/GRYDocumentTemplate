@@ -3,6 +3,8 @@ import os
 import sys
 import subprocess
 import urllib.request
+import shutil
+
 parser = argparse.ArgumentParser(description='Creates a new thesis.')
 
 parser.add_argument('folder_for_new_document', help='Specifies the folder where the thesis should be stored')
@@ -10,8 +12,8 @@ parser.add_argument('document_name', help='Specifies the name of the thesis')
 
 args = parser.parse_args()
 
-#template_repository=os.path.dirname(os.path.abspath(__file__))# use this path to use this (local) repository as remote for the submodule
-template_repository="https://github.com/anionDev/gryThesis.git"
+template_repository=os.path.dirname(os.path.abspath(__file__))# use this path to use this (local) repository as remote for the submodule
+#template_repository="https://github.com/anionDev/gryThesis.git"
 
 def execute(command:str, argument:str):
     print(subprocess.getoutput(command+" "+argument))
@@ -24,17 +26,15 @@ os.makedirs(new_document_folder)
 os.chdir(new_document_folder)
 execute("git", "init")
 execute("git", "submodule add "+template_repository+" template")
-content_file="entire-content.tex"
-content_file_content="TODO insert thesis here\\newline\n\\newline\n\\lipsum"#TODO add example-content
-with open(content_file,'w') as f:
-    f.write(content_file_content)
+content_file_content="\input{../Content/thesis-content}"
 with open("License.txt",'w') as f:
-    f.write("Only the author of the content of '"+content_file+"' is allowed to use the content of this repository.")
+    f.write("Only the author of the content of this thesis is allowed to use the content of this repository.")
 with open("metadata.tex",'w') as f:
     f.write("\\newcommand{\\thesiscreator}{authorname}\n"+
     "\\newcommand{\\thesisname}{"+args.document_name+"}\n"+
     "\\newcommand{\\customfooter}{Please report any mistakes here: \\url{https://example.com/mythesis}}")
     urllib.request.urlretrieve('https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore', os.path.join(new_document_folder,".gitignore"))
+shutil.copytree("Template", os.path.join(new_document_folder,"Content"))
 os.chdir("template")
 execute("Python", "BuildDocument.py")
 os.chdir("..")
