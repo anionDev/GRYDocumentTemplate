@@ -27,7 +27,7 @@ os.makedirs(new_document_folder)
 os.chdir(new_document_folder)
 execute("git", "init")
 execute("git", "submodule add "+template_remote_repository+" template")
-content_file_content="\\input{../Content/thesis-content}"
+content_file_content="\\input{../content/thesis-content}"
 with open("License.txt",'w') as f:
     f.write("Only the author of the content of this thesis is allowed to use the content of this repository.")
 with open("metadata.tex",'w') as f:
