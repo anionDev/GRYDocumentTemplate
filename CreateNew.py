@@ -30,12 +30,9 @@ execute("git", "submodule add "+template_remote_repository+" template")
 content_file_content="\\input{../content/thesis-content}"
 with open("License.txt",'w') as f:
     f.write("Only the author of the content of this thesis is allowed to use the content of this repository.")
-with open("metadata.tex",'w') as f:
-    f.write("\\newcommand{\\thesiscreator}{authorname}\n"+
-    "\\newcommand{\\thesisname}{"+args.document_name+"}\n"+
-    "\\newcommand{\\customfooter}{Please report any mistakes here: \\url{https://example.com/mythesis}}")
-    urllib.request.urlretrieve('https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore', os.path.join(new_document_folder,".gitignore"))
-shutil.copytree(os.path.join(template_repository,"Template"), os.path.join(new_document_folder,"Content"))
+urllib.request.urlretrieve('https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore', os.path.join(new_document_folder,".gitignore"))
+shutil.copy(os.path.join(os.path.join(template_repository,"miscellaneous"),"metadata.tex"),os.path.join(new_document_folder,"metadata.tex"))
+shutil.copytree(os.path.join(os.path.join(template_repository,"template"),"pattern"), os.path.join(new_document_folder,"Content"))
 os.chdir("template")
 execute("Python", "BuildDocument.py")
 os.chdir("..")
