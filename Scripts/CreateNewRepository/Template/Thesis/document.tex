@@ -1,0 +1,34 @@
+% !TeX root = ./document.tex
+% arara: pdflatex: { shell: yes }
+% arara: makeglossaries
+% arara: biber
+% arara: pdflatex: { shell: yes }
+% arara: pdflatex: { shell: yes }
+
+\input{__templatefolder__/DocumentSuffixBegin.tex}
+\input{__templatefolder__/DocumentSuffixEnd.tex}
+
+\documentclass{report}
+
+\input{__templatefolder__/TemplateBegin.tex}
+
+\input{other/configuration.tex}
+\input{other/translations.tex}
+
+\input{other/titlepage.tex}
+
+\tableofcontents
+\newpage
+
+\chapter{Abstract}
+\input{othera/abstract.tex}
+
+% TODO remove examples
+\input{other/examples.tex}
+
+\input{content/content.tex}
+\input{other/directories.tex}
+\import{other/appendix.tex}
+\input{other/statementofauthorship.tex}
+
+\input{__templatefolder__/TemplateEnd.tex}
