@@ -22,7 +22,7 @@
 \renewcommand{\dateseparator}{.}
 
 %set title of table-of-contents
-\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\contentsname}{\GRYTTitleForContents}
 
 %import bibliography-file
 \addbibresource{other/bibliography.bib}
@@ -70,13 +70,13 @@
 \renewcommand{\glossarysection}[2][]{}
 
 %translate the original prefix ("Figure") of figure-captions
-\renewcommand{\figurename}{Abbildung}
+\renewcommand{\figurename}{\GRYTCaptionPrefixForFigures}
 
 %translate the original prefix ("Table") of table-captions
-\renewcommand{\tablename}{Tabelle}
+\renewcommand{\tablename}{\GRYTCaptionPrefixForTables}
 
 %translate the original prefix ("Listing") of listing-captions
-%\renewcommand\listingscaption{Listing}
+%\renewcommand\listingscaption{\GRYTCaptionPrefixForListings}
 
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
