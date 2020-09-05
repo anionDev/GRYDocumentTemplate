@@ -76,7 +76,7 @@
 \renewcommand{\tablename}{\GRYTCaptionPrefixForTables}
 
 %translate the original prefix ("Listing") of listing-captions
-%\renewcommand\listingscaption{\GRYTCaptionPrefixForListings}
+\renewcommand\lstlistingname{\GRYTCaptionPrefixForListings}
 
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
@@ -87,6 +87,4 @@
 
 \setminted[python]{linenos, numbersep=5pt, frame=lines}
 
-\import{directories/}{glossaryentries.tex}
-\import{directories/}{abbreviations.tex}
 \begin{document}
