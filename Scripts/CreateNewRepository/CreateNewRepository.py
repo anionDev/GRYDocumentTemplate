@@ -40,7 +40,7 @@ def process(arguments):
             
             execute_and_raise_exception_if_exit_code_is_not_zero("git","init", folder)
             copy_tree(os.path.join(folder_of_current_file, "Template"), folder)            
-            execute_and_raise_exception_if_exit_code_is_not_zero("git",f'submodule add -b development "{folder_of_current_repository}" Thesis{os.path.sep}GRYThesisTemplate', folder)
+            execute_and_raise_exception_if_exit_code_is_not_zero("git",f'submodule add -b master "{folder_of_current_repository}" Thesis{os.path.sep}GRYThesisTemplate', folder)
             
             replacements=dict()
             replacements["author"]=arguments.author
