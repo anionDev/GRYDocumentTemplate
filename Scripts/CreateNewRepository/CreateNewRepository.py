@@ -25,7 +25,7 @@ def process(arguments):
             execute_and_raise_exception_if_exit_code_is_not_zero("git","init", folder)
             copy_tree(os.path.join(folder_of_current_file, "Template"), folder)
             execute_and_raise_exception_if_exit_code_is_not_zero("git",f'submodule add -b development "{folder_of_current_repository}" Thesis{os.path.sep}GRYThesisTemplate', folder)
-            execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", os.path.join(folder_of_current_file, "Thesis"))
+            execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", os.path.join(folder, "Thesis"))
             git_commit(folder, "Initial commit")
         
     except Exception as exception:
