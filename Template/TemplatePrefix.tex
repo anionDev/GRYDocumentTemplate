@@ -10,15 +10,17 @@
 \usepackage{xcolor}%Required for \color
 \usepackage{listings}%Required for listings
 \usepackage{csquotes}%Required for \enquote{...}
-\usepackage{import}%Required for the import-command
 \usepackage{svg}%Required for rendering svg-files
-\usepackage[ddmmyyyy]{datetime}
+\usepackage{import}%Required for the import-command
 \usepackage[titles]{tocloft}
-\newlistof{listing}{lol}{List of Listings}
 \usepackage[newfloat]{minted}%Required for minted-listings
 \usepackage{caption}
+\usepackage{pgffor}
+\usepackage{xparse}
+\usepackage{listofitems}
+\input{other/additionalpackages.tex}
 
-%set dot as dateseparator in dd.mm.yyyy
+%set dot as dateseparator
 \renewcommand{\dateseparator}{.}
 
 %set title of table-of-contents
@@ -85,6 +87,6 @@
   fileext=lol
   }
 
-\setminted[python]{linenos, numbersep=5pt, frame=lines}
+\setminted{linenos, numbersep=5pt, frame=lines}
 
 \begin{document}
