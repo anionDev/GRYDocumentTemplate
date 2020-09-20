@@ -1,0 +1,1 @@
+Only __author__ is allowed to read, change, use or publish the content and to change the license of this repository.
