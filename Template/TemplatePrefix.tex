@@ -1,5 +1,5 @@
 \usepackage[T1]{fontenc}%Required for special character like < and |
-\usepackage{biblatex}%Reguired for "biber" to print the bibliography
+\usepackage[backend=biber]{biblatex}%Reguired for "biber" to print the bibliography
 \usepackage{lipsum}%Required to be able to print "Lorem ipsum"-texts
 \usepackage{titlesec}%Reguired to be able for format headings.
 \usepackage[hidelinks]{hyperref}%Required for links to make references and table-of-content-entries "clickable"
@@ -20,14 +20,11 @@
 \usepackage{listofitems}
 \input{other/additionalpackages.tex}
 
-%set dot as dateseparator
-\renewcommand{\dateseparator}{.}
-
 %set title of table-of-contents
-\renewcommand{\contentsname}{\GRYTTitleForContents}
+\renewcommand{\contentsname}{\GRYTTTitleForContents}
 
 %import bibliography-file
-\addbibresource{other/bibliography.bib}
+\addbibresource{./other/bibliography.bib}
 
 %hide "Chapter X" at the beginning of chapters
 \titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter}{1em}{}
@@ -72,13 +69,13 @@
 \renewcommand{\glossarysection}[2][]{}
 
 %translate the original prefix ("Figure") of figure-captions
-\renewcommand{\figurename}{\GRYTCaptionPrefixForFigures}
+\renewcommand{\figurename}{\GRYTTCaptionPrefixForFigures}
 
 %translate the original prefix ("Table") of table-captions
-\renewcommand{\tablename}{\GRYTCaptionPrefixForTables}
+\renewcommand{\tablename}{\GRYTTCaptionPrefixForTables}
 
 %translate the original prefix ("Listing") of listing-captions
-\renewcommand\lstlistingname{\GRYTCaptionPrefixForListings}
+\renewcommand\lstlistingname{\GRYTTCaptionPrefixForListings}
 
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
