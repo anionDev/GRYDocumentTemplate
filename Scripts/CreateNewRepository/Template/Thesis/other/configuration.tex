@@ -1,30 +1,44 @@
-%Configuration
-\newcommand{\GRYTAuthor}{__author__}
-\newcommand{\GRYTTitle}{__title__}
-\newcommand{\GRYTDate}{__date__}
-\newcommand{\GRYTDocumenttype}{Thesis}
-\def\TitlePageKeyValuePairs{% https://tex.stackexchange.com/a/252070/213568
-	{First examiner, Prof. Dr. Mr John Doe},
-	{Second examiner, Prof. Dr. Mrs Emily Miller},
-	{university, Some University},
-	{Degree program, My degree program},
-	{submitted, \GRYTDate},
-	{author, __author__\\Addressline 1\\Addressline2},
-	{matriculation number, 123456},
-}
-%Translations
-\newcommand{\GRYTTitleForContents}{Contents}
-\newcommand{\GRYTTitleForChapterAbstract}{Abstract}
-\newcommand{\GRYTTitleForChapterListOfFigures}{Figures}
-\newcommand{\GRYTTitleForChapterListOfTables}{Tables}
-\newcommand{\GRYTTitleForChapterListOfListings}{Listings}
-\newcommand{\GRYTTitleForChapterAbbreviations}{Abbreviations}
-\newcommand{\GRYTTitleForChapterGlossary}{Glossary}
-\newcommand{\GRYTTitleForChapterBibliography}{Bibliography}
-\newcommand{\GRYTTitleForChapterAppendix}{Appendix}
-\newcommand{\GRYTTitleForChapterStatementOfAuthorship}{Statement of authorship}
-\newcommand{\GRYTCaptionPrefixForFigures}{Figure}
-\newcommand{\GRYTCaptionPrefixForTables}{Table}
-\newcommand{\GRYTCaptionPrefixForListings}{Listing}
-\newcommand{\GRYTTitleOfChapterDirectories}{Directories}
+% !TeX root = ../document.tex
 
+%----------------------------------------------------------------------
+%Configuration
+\newcommand{\GRYTCAuthor}{John Doe}
+\newcommand{\GRYTCDocumentTitle}{My Thesis}
+\newdate{documentdate}{03}{01}{2021}
+\newcommand{\GRYTCDocumentDate}{\displaydate{documentdate}}
+\newcommand{\GRYTCDocumentCity}{ExampleCity}
+\newcommand{\GRYTCAuthorAddress}{1 Main Street\\\GRYTCDocumentCity 12345}
+\newcommand{\GRYTCDocumentType}{Master-Thesis}
+\def\GRYTCTitlePageItems{
+    {1. examiner:\\Sherlock Holmes},
+    {2. examiner:\\Dr. John H. Watson},
+    {Institute:\\My university},
+    {Major:\\My Major},
+    {Author:\\\GRYTCAuthor\\\GRYTCAuthorAddress},
+    {Matriculation number:\\4711},
+    {Eingereicht am:\\\GRYTCDocumentDate},
+}
+\renewcommand{\dateseparator}{-}%set "-" as dateseparator
+
+%----------------------------------------------------------------------
+%Translations
+\newcommand{\GRYTTTitleForContents}{Contents}
+\newcommand{\GRYTTTitleForChapterAbstract}{Abstract}
+\newcommand{\GRYTTTitleForChapterListOfFigures}{List of figures}
+\newcommand{\GRYTTTitleForChapterListOfTables}{List of tables}
+\newcommand{\GRYTTTitleForChapterListOfListings}{List of listings}
+\newcommand{\GRYTTTitleForChapterAbbreviations}{List of abbreviations}
+\newcommand{\GRYTTTitleForChapterGlossary}{Glossary}
+\newcommand{\GRYTTTitleForChapterBibliography}{Bibliography}
+\newcommand{\GRYTTTitleForChapterAppendix}{Appendix}
+\newcommand{\GRYTTTitleForChapterStatementOfAuthorship}{Statement of authorship}
+\newcommand{\GRYTTCaptionPrefixForFigures}{Figure}
+\newcommand{\GRYTTCaptionPrefixForTables}{Table}
+\newcommand{\GRYTTCaptionPrefixForListings}{Listing}
+\newcommand{\GRYTTTitleOfChapterDirectories}{Directories}
+\newcommand{\GRYTTDate}{Date}
+\newcommand{\GRYTTPlace}{Place}
+\newcommand{\GRYTTSignature}{Signature}
+\newcommand{\GRYTTStatementOfAuthorship}{TODO}
+
+%----------------------------------------------------------------------
