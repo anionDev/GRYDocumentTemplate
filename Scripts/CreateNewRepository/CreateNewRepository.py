@@ -29,7 +29,7 @@ def replace_underscores_in_file(file: str, replacements: dict, encoding:str="utf
 
 def process(arguments):
     try:
-        folder=resolve_relative_path_from_current_working_directory(arguments.folder)
+        folder=os.path.join(resolve_relative_path_from_current_working_directory(arguments.folder),arguments.title.replace(" ","-"))
         folder_of_current_file = os.path.dirname(os.path.realpath(__file__))
         folder_of_current_repository=resolve_relative_path(f"..{os.path.sep}..",folder_of_current_file)
         if(os.path.isdir(folder)):
