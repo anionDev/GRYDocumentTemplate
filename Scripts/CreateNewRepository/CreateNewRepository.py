@@ -4,16 +4,16 @@ import os
 from distutils.dir_util import copy_tree
 from ScriptCollection.core import write_message_to_stderr, execute_and_raise_exception_if_exit_code_is_not_zero, write_exception_to_stderr, ensure_directory_exists, resolve_relative_path, git_commit, resolve_relative_path_from_current_working_directory
 
+parser = argparse.ArgumentParser(description="Creates a new repository for a thesis")
+parser.add_argument("folder")
+parser.add_argument('-a', '--author')
+parser.add_argument('-t', '--title')
+parser.add_argument('-d', '--date')
+parser.add_argument('-y', '--documenttype')
+args = parser.parse_args()
 
 def process(arguments):
     try:
-        parser = argparse.ArgumentParser(description="Creates a new repository for a thesis")
-        parser.add_argument("folder")
-        parser.add_argument('-a', '--author')
-        parser.add_argument('-t', '--title')
-        parser.add_argument('-d', '--date')
-        parser.add_argument('-y', '--documenttype')
-        args = parser.parse_args()
         folder=resolve_relative_path_from_current_working_directory(arguments.folder)
         folder_of_current_file = os.path.dirname(os.path.realpath(__file__))
         folder_of_current_repository=resolve_relative_path(f"..{os.path.sep}..",folder_of_current_file)
@@ -23,8 +23,9 @@ def process(arguments):
         else:
             ensure_directory_exists(folder)
             execute_and_raise_exception_if_exit_code_is_not_zero("git","init", folder)
-            copy_tree(os.path.join(folder_of_current_file, "Template"), os.path.join(folder_of_current_file, "Thesis", "Template"))
-            execute_and_raise_exception_if_exit_code_is_not_zero("git",f'submodule add -b development "{folder_of_current_repository}" Thesis{os.path.sep}Template', folder)
+            copy_tree(os.path.join(folder_of_current_file, "Template"), folder)
+            execute_and_raise_exception_if_exit_code_is_not_zero("git",f'submodule add -b development "{folder_of_current_repository}" Thesis{os.path.sep}GRYThesisTemplate', folder)
+            execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", os.path.join(folder_of_current_file, "Thesis"))
             git_commit(folder, "Initial commit")
         
     except Exception as exception:
