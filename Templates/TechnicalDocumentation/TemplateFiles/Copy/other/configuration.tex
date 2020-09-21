@@ -1,0 +1,44 @@
+% !TeX root = ../document.tex
+
+%----------------------------------------------------------------------
+%Configuration
+\newcommand{\GRYTCAuthor}{__author__}
+\newcommand{\GRYTCDocumentTitle}{__name__}
+\DTMnewdatestyle{commondateformat}{
+  \renewcommand*{\DTMdisplaydate}[4]{\DTMtwodigits{##3}.\DTMtwodigits{##2}.##1}
+  \renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}
+}
+\DTMsetdatestyle{commondateformat}
+\DTMsavedate{documentdate}{__year__-__month__-__day__}
+\newcommand{\GRYTCDocumentDate}{\DTMusedate{documentdate}}
+\newcommand{\GRYTCDocumentCity}{Example-City}
+\newcommand{\GRYTCAuthorAddress}{1 Main Street\\\GRYTCDocumentCity 12345}
+\newcommand{\GRYTCDocumentType}{__documenttype__}
+\def\GRYTCTitlePageItems{
+    {1. examiner:\\Sherlock Holmes},
+    {2. examiner:\\Dr. John H. Watson},
+    {Institute:\\My university},
+    {Major:\\My Major},
+    {Author:\\\GRYTCAuthor\\\GRYTCAuthorAddress},
+    {Matriculation number:\\4711},
+    {Date:\\\GRYTCDocumentDate},
+}
+
+%----------------------------------------------------------------------
+%Translations
+\newcommand{\GRYTTTitleForContents}{Contents}
+\newcommand{\GRYTTTitleForChapterAbstract}{Abstract}
+\newcommand{\GRYTTTitleForChapterListOfFigures}{List of figures}
+\newcommand{\GRYTTTitleForChapterListOfTables}{List of tables}
+\newcommand{\GRYTTTitleForChapterListOfListings}{List of listings}
+\newcommand{\GRYTTTitleForChapterAbbreviations}{List of abbreviations}
+\newcommand{\GRYTTTitleForChapterGlossary}{Glossary}
+\newcommand{\GRYTTTitleForChapterBibliography}{Bibliography}
+\newcommand{\GRYTTTitleForChapterAppendix}{Appendix}
+\newcommand{\GRYTTTitleForChapterStatementOfAuthorship}{Statement of authorship}
+\newcommand{\GRYTTCaptionPrefixForFigures}{Figure}
+\newcommand{\GRYTTCaptionPrefixForTables}{Table}
+\newcommand{\GRYTTCaptionPrefixForListings}{Listing}
+\newcommand{\GRYTTTitleOfChapterDirectories}{Directories}
+
+%----------------------------------------------------------------------

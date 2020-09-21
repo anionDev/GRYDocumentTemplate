@@ -3,7 +3,7 @@ import sys
 import datetime
 import os
 from distutils.dir_util import copy_tree
-from ScriptCollection.core import write_message_to_stderr, read_lines_from_file, execute_and_raise_exception_if_exit_code_is_not_zero, write_exception_to_stderr, ensure_directory_exists, resolve_relative_path, git_commit, resolve_relative_path_from_current_working_directory, read_text_from_file, write_text_to_file
+from ScriptCollection.core import write_message_to_stderr, string_is_none_or_whitespace, read_lines_from_file, execute_and_raise_exception_if_exit_code_is_not_zero, write_exception_to_stderr, ensure_directory_exists, resolve_relative_path, git_commit, resolve_relative_path_from_current_working_directory, read_text_from_file, write_text_to_file
 
 parser = argparse.ArgumentParser(description="Creates a new repository for a document")
 parser.add_argument('-t', '--template', required=True)
@@ -59,7 +59,8 @@ def process(arguments):
             replace_underscores_in_file(os.path.join(folder, "License.txt"),replacements)
             replace_underscores_in_file(os.path.join(folder, "ReadMe.md"),replacements)
             for line in read_lines_from_file(os.path.join(folder_of_concrete_template,"FilesWithReplacements.txt")):
-                replace_underscores_in_file(os.path.join(document_folder, line),replacements)
+                if not string_is_none_or_whitespace(line):
+                    replace_underscores_in_file(os.path.join(document_folder, line),replacements)
             
             execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", document_folder)            
             git_commit(folder, "Initial commit")
