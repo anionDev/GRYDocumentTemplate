@@ -1,0 +1,34 @@
+% !TeX root = ./document.tex
+% arara: pdflatex: { shell: yes, interaction: nonstopmode}
+
+\input{./GRYDocumentTemplate/Templates/FormalLetterDIN5008/TemplateFiles/Linked/prefix.tex}
+
+\usepackage[ngerman]{babel}
+\begin{document}
+\renewcommand*{\raggedsignature}{\raggedright}
+\setkomavar{fromname}{__author__}
+\setkomavar{fromaddress}{Musterstraße 1\\12345 Musterhausen}
+\setkomavar{fromphone}{+49123456789}
+\newcommand{\fromemail}{MaxMustermann@example.com}
+\setkomavar{fromemail}{\href{mailto:\fromemail}{\fromemail}}
+\setkomavar{fromurl}[]{\href{https://\fromurl}{\fromurl}}
+\setkomavar{place}{Hannover}
+\setkomavar{subject}{__name__}
+%\setkomavar{date}{\today}
+%\setkomavar{customer}[\customername]{456789}
+%\setkomavar{yourref}[\yourrefname]{987654}
+%\setkomavar{yourmail}[\yourmailname]{\today}
+
+\begin{letter}{
+	Erika Mustermann\\
+	Musterstraße 2\\12345 Musterhausen
+}
+
+\opening{Sehr geehrte Damen und Herren,}
+
+Lorem ipsum
+
+\closing{Mit freundlichen Grüßen}
+\encl{Anlage1}
+
+\input{./GRYDocumentTemplate/Templates/FormalLetterDIN5008/TemplateFiles/Linked/suffix.tex}

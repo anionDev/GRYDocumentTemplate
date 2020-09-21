@@ -1,0 +1,90 @@
+\usepackage[T1]{fontenc}
+\usepackage[backend=biber]{biblatex}%Reguired for "biber" to print the bibliography
+\usepackage{lipsum}%Required to be able to print "Lorem ipsum"-texts
+\usepackage{titlesec}%Reguired to be able for format headings.
+\usepackage[hidelinks]{hyperref}%Required for links to make references and table-of-content-entries "clickable"
+\usepackage[pdftex]{graphicx}%Required for graphics
+\usepackage{float}%Required for example for the "H"-formatting of graphics
+\usepackage{array}%Required for \newcommand{\thickhline}
+\usepackage[acronym]{glossaries}%Required for glossaries
+\usepackage{xcolor}%Required for \color
+\usepackage{listings}%Required for listings
+\usepackage{csquotes}%Required for \enquote{...}
+\usepackage{svg}%Required for rendering svg-files
+\usepackage{import}%Required for the import-command
+\usepackage[titles]{tocloft}
+\usepackage[newfloat]{minted}%Required for minted-listings
+\usepackage{caption}
+\usepackage{pgffor}
+\usepackage{xparse}
+\usepackage{listofitems}
+\usepackage{datetime2}
+\input{other/additionalpackages.tex}
+
+%set title of table-of-contents
+\renewcommand{\contentsname}{\GRYTTTitleForContents}
+
+%import bibliography-file
+\addbibresource{./other/bibliography.bib}
+
+%hide "Chapter X" at the beginning of chapters
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter}{1em}{}
+
+%define \thickline (for tables):
+\makeatletter
+\newcommand{\thickhline}{
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+\makeatother
+
+%hide heading of "List of tables":
+\makeatletter
+\renewcommand\listoftables{
+    \@starttoc{lot}
+}
+\makeatother
+
+%hide heading of "List of figures":
+\makeatletter
+\renewcommand\listoffigures{
+    \@starttoc{lof}
+}
+\makeatother
+
+%hide heading of "List of listings":
+\makeatletter
+\renewcommand\lstlistoflistings{
+    \@starttoc{lol}
+}
+\makeatother
+
+%define glossaries:
+\makeglossaries
+
+%add dots in list for glossaries and acronyms
+\renewcommand*\glspostdescription{\dotfill}
+
+%hide heading of "Glossary"
+\renewcommand{\glossarysection}[2][]{}
+
+%translate the original prefix ("Figure") of figure-captions
+\renewcommand{\figurename}{\GRYTTCaptionPrefixForFigures}
+
+%translate the original prefix ("Table") of table-captions
+\renewcommand{\tablename}{\GRYTTCaptionPrefixForTables}
+
+%translate the original prefix ("Listing") of listing-captions
+\renewcommand\lstlistingname{\GRYTTCaptionPrefixForListings}
+
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{
+  name={Listing},
+  fileext=lol
+  }
+
+\setminted{linenos, numbersep=5pt, frame=lines}
+
+\begin{document}

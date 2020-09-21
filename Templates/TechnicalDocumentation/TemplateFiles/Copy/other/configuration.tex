@@ -1,0 +1,40 @@
+% !TeX root = ../document.tex
+
+%----------------------------------------------------------------------
+%Configuration
+\newcommand{\GRYTCAuthor}{__author__}
+\newcommand{\GRYTCDocumentTitle}{__name__}
+\DTMnewdatestyle{commondateformat}{
+  \renewcommand*{\DTMdisplaydate}[4]{##1-\DTMtwodigits{##2}-\DTMtwodigits{##3}}
+  \renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}
+}
+\DTMsetdatestyle{commondateformat}
+\DTMsavedate{documentdate}{__year__-__month__-__day__}
+\newcommand{\GRYTCDocumentDate}{\DTMusedate{documentdate}}
+\newcommand{\GRYTCDocumentCity}{Example-City}
+\newcommand{\GRYTCAuthorAddress}{1 Main Street\\\GRYTCDocumentCity 12345}
+\newcommand{\GRYTCDocumentType}{Technical documentation}
+\def\GRYTCTitlePageItems{
+    {Company:\\\GRYTCAuthor\\\GRYTCAuthorAddress},
+    {Division\\My division},
+    {Date:\\\GRYTCDocumentDate},
+    {Version:\\1.0},
+}
+
+%----------------------------------------------------------------------
+%Translations
+\newcommand{\GRYTTTitleForContents}{Contents}
+\newcommand{\GRYTTTitleForChapterAbstract}{Abstract}
+\newcommand{\GRYTTTitleForChapterListOfFigures}{List of figures}
+\newcommand{\GRYTTTitleForChapterListOfTables}{List of tables}
+\newcommand{\GRYTTTitleForChapterListOfListings}{List of listings}
+\newcommand{\GRYTTTitleForChapterAbbreviations}{List of abbreviations}
+\newcommand{\GRYTTTitleForChapterGlossary}{Glossary}
+\newcommand{\GRYTTTitleForChapterBibliography}{Bibliography}
+\newcommand{\GRYTTTitleForChapterAppendix}{Appendix}
+\newcommand{\GRYTTCaptionPrefixForFigures}{Figure}
+\newcommand{\GRYTTCaptionPrefixForTables}{Table}
+\newcommand{\GRYTTCaptionPrefixForListings}{Listing}
+\newcommand{\GRYTTTitleOfChapterDirectories}{Directories}
+
+%----------------------------------------------------------------------
