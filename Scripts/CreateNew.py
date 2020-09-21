@@ -3,7 +3,7 @@ import sys
 import datetime
 import os
 from distutils.dir_util import copy_tree
-from ScriptCollection.core import write_message_to_stderr, execute_and_raise_exception_if_exit_code_is_not_zero, write_exception_to_stderr, ensure_directory_exists, resolve_relative_path, git_commit, resolve_relative_path_from_current_working_directory, read_text_from_file, write_text_to_file
+from ScriptCollection.core import write_message_to_stderr, read_lines_from_file, execute_and_raise_exception_if_exit_code_is_not_zero, write_exception_to_stderr, ensure_directory_exists, resolve_relative_path, git_commit, resolve_relative_path_from_current_working_directory, read_text_from_file, write_text_to_file
 
 parser = argparse.ArgumentParser(description="Creates a new repository for a document")
 parser.add_argument('-t', '--template', required=True)
@@ -34,7 +34,7 @@ def process(arguments):
         folder_of_current_file = os.path.dirname(os.path.realpath(__file__))
         folder_of_current_repository=resolve_relative_path(f"..",folder_of_current_file)
         folder_of_common_files=resolve_relative_path(f"CommonFiles",folder_of_current_repository)
-        folder_of_concrete_template=resolve_relative_path(f"Template{os.path.sep}{arguments.template}",folder_of_current_repository)
+        folder_of_concrete_template=resolve_relative_path(f"Templates{os.path.sep}{arguments.template}",folder_of_current_repository)
         if(os.path.isdir(folder)):
             write_message_to_stderr(f"The directory '{folder}' already exists")
             return 2
@@ -61,7 +61,7 @@ def process(arguments):
             for line in read_lines_from_file(os.path.join(folder_of_concrete_template,"FilesWithReplacements.txt")):
                 replace_underscores_in_file(os.path.join(document_folder, line),replacements)
             
-            execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", document_folder)            
+            #execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", document_folder)            
             git_commit(folder, "Initial commit")
         
     except Exception as exception:

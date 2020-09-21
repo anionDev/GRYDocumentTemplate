@@ -1,1 +1,1 @@
-other/configuration.txt
+other/configuration.tex
