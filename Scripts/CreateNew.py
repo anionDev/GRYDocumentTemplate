@@ -61,7 +61,7 @@ def process(arguments):
             for line in read_lines_from_file(os.path.join(folder_of_concrete_template,"FilesWithReplacements.txt")):
                 replace_underscores_in_file(os.path.join(document_folder, line),replacements)
             
-            #execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", document_folder)            
+            execute_and_raise_exception_if_exit_code_is_not_zero("arara","document.tex", document_folder)            
             git_commit(folder, "Initial commit")
         
     except Exception as exception:
