@@ -1,14 +1,11 @@
 % !TeX root = ./document.tex
 % arara: pdflatex: { shell: yes, interaction: nonstopmode}
 
-\documentclass[fontsize=12pt, paper=A4, fromalign=right, fromphone=true, fromemail=true, foldmarks=true]{scrlttr2}
+\input{./GRYDocumentTemplate/Templates/FormalLetterDIN5008/TemplateFiles/Linked/prefix.tex}
 
-\usepackage[utf8]{inputenc}
-\usepackage{pdfpages}
-\usepackage[hidelinks]{hyperref}
-
+\usepackage[ngerman]{babel}
 \begin{document}
-
+\renewcommand*{\raggedsignature}{\raggedright}
 \setkomavar{fromname}{Max Mustermann}
 \setkomavar{fromaddress}{Musterstraße 1\\12345 Musterhausen}
 \setkomavar{fromphone}{+49123456789}
@@ -17,11 +14,11 @@
 \newcommand{\fromurl}{example.com}
 \setkomavar{fromurl}[]{\href{https://\fromurl}{\fromurl}}
 \setkomavar{place}{Hannover}
-\setkomavar{date}{\today}
 \setkomavar{subject}{Betreff}
-\setkomavar{customer}[\customername]{456789}
-\setkomavar{yourref}[\yourrefname]{987654}
-\setkomavar{yourmail}[\yourmailname]{\today}
+%\setkomavar{date}{\today}
+%\setkomavar{customer}[\customername]{456789}
+%\setkomavar{yourref}[\yourrefname]{987654}
+%\setkomavar{yourmail}[\yourmailname]{\today}
 
 \begin{letter}{
 	Erika Mustermann\\
@@ -33,5 +30,6 @@
 Lorem ipsum
 
 \closing{Mit freundlichen Grüßen}
-\end{letter}
-\end{document}
+\encl{Anlage1}
+
+\input{./GRYDocumentTemplate/Templates/FormalLetterDIN5008/TemplateFiles/Linked/suffix.tex}
