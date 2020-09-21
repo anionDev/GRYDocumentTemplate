@@ -1,10 +1,37 @@
 % !TeX root = ./document.tex
 % arara: pdflatex: { shell: yes, interaction: nonstopmode}
 
-\documentclass{report}
+\documentclass[fontsize=12pt, paper=A4, fromalign=right, fromphone=true, fromemail=true, foldmarks=true]{scrlttr2}
 
-\input{./GRYDocumentTemplate/Templates/FormalLetterDIN5008/TemplateFiles/Linked/prefix.tex}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
 
-some content
+\begin{document}
 
-\input{./GRYDocumentTemplate/Templates/FormalLetterDIN5008/TemplateFiles/Linked/suffix.tex}
+\setkomavar{fromname}{Max Mustermann}
+\setkomavar{fromaddress}{Musterstraße 1\\12345 Musterhausen}
+\setkomavar{fromphone}{+49123456789}
+\newcommand{\fromemail}{MaxMustermann@example.com}
+\setkomavar{fromemail}{\href{mailto:\fromemail}{\fromemail}}
+\newcommand{\fromurl}{example.com}
+\setkomavar{fromurl}[]{\href{https://\fromurl}{\fromurl}}
+\setkomavar{place}{Hannover}
+\setkomavar{date}{\today}
+\setkomavar{subject}{Betreff}
+\setkomavar{customer}[\customername]{456789}
+\setkomavar{yourref}[\yourrefname]{987654}
+\setkomavar{yourmail}[\yourmailname]{\today}
+
+\begin{letter}{
+	Erika Mustermann\\
+	Musterstraße 2\\12345 Musterhausen
+}
+
+\opening{Sehr geehrte Damen und Herren,}
+
+Lorem ipsum
+
+\closing{Mit freundlichen Grüßen}
+\end{letter}
+\end{document}
