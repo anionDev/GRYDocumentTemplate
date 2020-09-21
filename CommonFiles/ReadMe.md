@@ -1,3 +1,3 @@
 # Purpose
 
-This repository contains the sourcecode of the thesis "__title__".
+This repository contains the sourcecode of the thesis "__name__".
