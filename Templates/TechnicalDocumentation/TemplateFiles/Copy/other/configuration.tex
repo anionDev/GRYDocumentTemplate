@@ -5,7 +5,7 @@
 \newcommand{\GRYTCAuthor}{__author__}
 \newcommand{\GRYTCDocumentTitle}{__name__}
 \DTMnewdatestyle{commondateformat}{
-  \renewcommand*{\DTMdisplaydate}[4]{\DTMtwodigits{##3}.\DTMtwodigits{##2}.##1}
+  \renewcommand*{\DTMdisplaydate}[4]{##1-\DTMtwodigits{##2}-\DTMtwodigits{##3}}
   \renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}
 }
 \DTMsetdatestyle{commondateformat}
@@ -13,14 +13,11 @@
 \newcommand{\GRYTCDocumentDate}{\DTMusedate{documentdate}}
 \newcommand{\GRYTCDocumentCity}{Example-City}
 \newcommand{\GRYTCAuthorAddress}{1 Main Street\\\GRYTCDocumentCity 12345}
-\newcommand{\GRYTCDocumentType}{__documenttype__}
+\newcommand{\GRYTCDocumentType}{Technical documentation}
 \def\GRYTCTitlePageItems{
-    {1. examiner:\\Sherlock Holmes},
-    {2. examiner:\\Dr. John H. Watson},
-    {Institute:\\My university},
-    {Major:\\My Major},
+    {Company:\\\GRYTCAuthor},
+    {Division\\My division},
     {Author:\\\GRYTCAuthor\\\GRYTCAuthorAddress},
-    {Matriculation number:\\4711},
     {Date:\\\GRYTCDocumentDate},
 }
 
@@ -35,7 +32,6 @@
 \newcommand{\GRYTTTitleForChapterGlossary}{Glossary}
 \newcommand{\GRYTTTitleForChapterBibliography}{Bibliography}
 \newcommand{\GRYTTTitleForChapterAppendix}{Appendix}
-\newcommand{\GRYTTTitleForChapterStatementOfAuthorship}{Statement of authorship}
 \newcommand{\GRYTTCaptionPrefixForFigures}{Figure}
 \newcommand{\GRYTTCaptionPrefixForTables}{Table}
 \newcommand{\GRYTTCaptionPrefixForListings}{Listing}
