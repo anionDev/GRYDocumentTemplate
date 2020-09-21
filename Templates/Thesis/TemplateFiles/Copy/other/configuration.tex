@@ -4,8 +4,9 @@
 %Configuration
 \newcommand{\GRYTCAuthor}{__author__}
 \newcommand{\GRYTCDocumentTitle}{__name__}
-\newdate{documentdate}{__day__}{__month__}{__year__}
-\newcommand{\GRYTCDocumentDate}{\displaydate{documentdate}}
+\DTMlangsetup[de-DE]{datesep=x}
+\DTMsavedate{documentdate}{__year__-__month__-__day__}
+\newcommand{\GRYTCDocumentDate}{\DTMusedate{documentdate}}
 \newcommand{\GRYTCDocumentCity}{Example-City}
 \newcommand{\GRYTCAuthorAddress}{1 Main Street\\\GRYTCDocumentCity 12345}
 \newcommand{\GRYTCDocumentType}{__documenttype__}
