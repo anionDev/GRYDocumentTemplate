@@ -2,14 +2,14 @@
 % arara: pdflatex: { shell: yes, interaction: nonstopmode}
 
 \documentclass{report}
-
+\input{./other.tex}
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/prefix.tex}
 \begin{center}
-{\huge __name__}\\
-__author__
+\href{\GRYTUrl}{\huge\GRYTTitle}\\
+\GRYTAuthor
 \end{center}
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/configuration.tex}
 
-some content
+\lipsum
 
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/suffix.tex}
