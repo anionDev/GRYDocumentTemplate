@@ -2,7 +2,8 @@
 % arara: pdflatex: { shell: yes, interaction: nonstopmode}
 
 \documentclass{report}
-\input{./other.tex}
+\input{./configuration.tex}
+
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/prefix.tex}
 \begin{center}
 \href{\GRYTUrl}{\huge\GRYTTitle}\\
@@ -10,6 +11,6 @@
 \end{center}
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/configuration.tex}
 
-\lipsum
+\import{content}{content.tex}
 
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/suffix.tex}
