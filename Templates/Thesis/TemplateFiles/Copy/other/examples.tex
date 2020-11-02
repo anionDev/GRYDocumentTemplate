@@ -84,11 +84,27 @@ Another table (with border):
 A listing:
 \begin{code}
     \captionof{listing}{A simple docker-compose.yml-file}\label{listings_listing1}
-    \inputminted{yaml}{other/listings/examples/SimpleDockerCompose.yml}
+    \inputminted[
+        frame=single,
+        obeytabs=true,
+        tabsize=4,
+        linenos,
+        breaklines,
+        numbersep=6pt,
+        breakanywhere
+    ]{yaml}{other/listings/examples/SimpleDockerCompose.yml}
 \end{code}
 
 Another listing:
 \begin{code}
     \captionof{listing}{A simple Python-program}\label{listings_listing2}
-    \inputminted{bash}{other/listings/examples/SimplePythonScript.py}
+    \inputminted[
+        frame=single,
+        obeytabs=true,
+        tabsize=4,
+        linenos,
+        breaklines,
+        numbersep=6pt,
+        breakanywhere
+    ]{bash}{other/listings/examples/SimplePythonScript.py}
 \end{code}
