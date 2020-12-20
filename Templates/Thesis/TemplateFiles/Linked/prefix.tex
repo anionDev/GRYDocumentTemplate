@@ -1,4 +1,5 @@
 \usepackage[T1]{fontenc}%Required for special character like < and |
+\usepackage[utf8]{inputenc}
 \usepackage[backend=biber]{biblatex}%Reguired for "biber" to print the bibliography
 \usepackage{lipsum}%Required to be able to print "Lorem ipsum"-texts
 \usepackage{titlesec}%Reguired to be able for format headings.
@@ -87,8 +88,16 @@
 \SetupFloatingEnvironment{listing}{
   name={Listing},
   fileext=lol
-  }
+}
 
-\setminted{linenos, numbersep=5pt, frame=lines}
+\setminted{
+    encoding=utf8,
+    fontsize=\footnotesize,
+    frame=lines,
+    linenos=true,
+    numbersep=5pt
+}
+
+% TODO add preamble
 
 \begin{document}
