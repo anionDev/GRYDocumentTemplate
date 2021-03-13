@@ -1,0 +1,110 @@
+% !TeX root = ../document.tex
+
+\chapter{Examples}
+
+\section{Special character}\label{sec_specialcharacter}
+
+example: \textbackslash \textasciitilde \\
+a<b>c|d/'`¿ÇäöüÄÖÜßé@!23\\
+this is some \enquote{quoted text}.
+
+
+\section{References}
+
+This sentence also has a reference to a bibliography-item (book).\cite{bib_zebk}\\
+This sentence also has a reference to a bibliography-item (online).\cite{bib_amtoc}\\
+This sentence has a simple footnote.\footnote{some footnote-text}\\
+This is the usage of a glossary-entry: \gls{glossaryentry1}\\
+This is the usage of another glossary-entry: \gls{glossaryentry2}\\
+This is the first usage of an abbreviation: \gls{phd}\\
+This is the first usage of another abbreviation: \gls{msc}\\
+This is the second usage of an abbreviation: \gls{phd}\\
+This is the second usage of another abbreviation: \gls{msc}\\
+This is a reference to figure 1: \ref{figure_example1}\\
+This is a reference to table 2: \ref{tables_table2}\\
+This is a reference to listing 1: \ref{listings_listing1}\\
+This is a reference to a section: \ref{sec_specialcharacter}\\
+(All usages of the \enquote{ref}-command require a \enquote{target}-annotation on the target-element.)
+
+\section{Lists}
+
+itemize (unordered):
+\begin{itemize}
+    \item This is an entry
+    \item This is another entry
+\end{itemize}
+enumerate (ordered):
+\begin{enumerate}
+    \item This is an entry
+    \item This is another entry
+\end{enumerate}
+
+\section{Figures}
+
+A figure:
+\begin{figure}[H]
+    \centering
+    \includegraphics{figures/examples/example1.png}
+    \caption{Figure 1 caption}\label{figure_example1}
+\end{figure}
+
+another figure:
+\begin{figure}[H]
+    \centering
+    \includegraphics{figures/examples/example2.png}
+    \caption{Figure 2 caption}\label{figure_example2}
+\end{figure}
+
+\section{Tables}
+
+A table (without border):
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ l c r }
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9 \\
+    \end{tabular}
+    \caption{Table 1 caption}\label{tables_table1}
+\end{table}
+
+Another table (with border):
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ | l | c | r | }\hline
+        1 & 2 & 3 \\\hline
+        4 & 5 & 6 \\\hline
+        7 & 8 & 9 \\\hline
+    \end{tabular}
+    \caption{Table 2 caption}\label{tables_table2}
+\end{table}
+
+\section{Listings}
+
+A listing:
+\begin{code}
+    \captionof{listing}{A simple docker-compose.yml-file}\label{listings_listing1}
+    \inputminted[
+        frame=single,
+        obeytabs=true,
+        tabsize=4,
+        linenos,
+        breaklines,
+        numbersep=6pt,
+        breakanywhere
+    ]{yaml}{other/listings/examples/SimpleDockerCompose.yml}
+\end{code}
+
+Another listing:
+\begin{code}
+    \captionof{listing}{A simple Python-program}\label{listings_listing2}
+    \inputminted[
+        frame=single,
+        obeytabs=true,
+        tabsize=4,
+        linenos,
+        breaklines,
+        numbersep=6pt,
+        breakanywhere
+    ]{bash}{other/listings/examples/SimplePythonScript.py}
+\end{code}
