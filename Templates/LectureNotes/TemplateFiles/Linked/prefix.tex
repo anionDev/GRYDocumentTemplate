@@ -15,6 +15,7 @@
 \usepackage{csquotes}%Required for \enquote{...}
 \usepackage{svg}%Required for rendering svg-files
 \usepackage{import}%Required for the import-command
+\usepackage{subfigure}
 \usepackage[titles, subfigure]{tocloft}
 \usepackage{caption}
 \usepackage{pgffor}
@@ -24,7 +25,8 @@
 \usepackage{hyphenat}
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{microtype}
-
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \input{other/additionalpreamble.tex}
 
 %set title of table-of-contents
@@ -98,7 +100,5 @@
     linenos=true,
     numbersep=5pt
 }
-
-% TODO add preamble
 
 \begin{document}
