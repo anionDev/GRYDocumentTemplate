@@ -2,18 +2,16 @@
 
 %----------------------------------------------------------------------
 %Configuration
-\newcommand{\GRYTCAuthor}{__author__}
-\newcommand{\GRYTCDocumentTitle}{__name__}
+\newcommand{\GRYTAuthor}{__author__}
+\newcommand{\GRYTDocumentTitle}{__name__}
 \DTMnewdatestyle{commondateformat}{
   \renewcommand*{\DTMdisplaydate}[4]{\DTMtwodigits{##3}.\DTMtwodigits{##2}.##1}
   \renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}
 }
 \DTMsetdatestyle{commondateformat}
 \DTMsavedate{documentdate}{__year__-__month__-__day__}
-\newcommand{\GRYTCDocumentDate}{\DTMusedate{documentdate}}
-\newcommand{\GRYTCDocumentCity}{Example-City}
-\newcommand{\GRYTCDocumentType}{__documenttype__}
-
+\newcommand{\GRYTDocumentDate}{\DTMusedate{documentdate}}
+\newcommand{\GRYTDocumentType}{__documenttype__}
 %----------------------------------------------------------------------
 %Translations
 \newcommand{\GRYTTitleForContents}{Contents}
@@ -33,6 +31,4 @@
 \newcommand{\GRYTDate}{Date}
 \newcommand{\GRYTPlace}{Place}
 \newcommand{\GRYTSignature}{Signature}
-\newcommand{\GRYTStatementOfAuthorship}{TODO}
-
 %----------------------------------------------------------------------
