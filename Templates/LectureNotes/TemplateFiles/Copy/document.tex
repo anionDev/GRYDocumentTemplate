@@ -10,21 +10,21 @@
 
 \input{./GRYDocumentTemplate/Templates/LectureNotes/TemplateFiles/Linked/prefix.tex}
 
-\input{other/configuration.tex}
+\input{./other/configuration.tex}
+\input{./GRYDocumentTemplate/Templates/LectureNotes/TemplateFiles/Linked/configuration.tex}
+
 \import{other}{glossaryentries.tex}
 \import{other}{abbreviations.tex}
-
-\input{other/titlepage.tex}
+\import{other}{titlepage.tex}
 \tableofcontents
 \newpage
 
-\chapter{\GRYTTTitleForChapterAbstract}
-\input{other/abstract.tex}
+\chapter{\GRYTTitleForChapterAbstract}
+\import{other}{abstract.tex}
 
-\import{other}{examples.tex}%TODO: remove this line
 \import{content}{content.tex}
+
 \import{other}{directories.tex}
 \import{other}{appendix.tex}
-\import{other}{statementofauthorship.tex}
 
 \input{./GRYDocumentTemplate/Templates/LectureNotes/TemplateFiles/Linked/suffix.tex}
