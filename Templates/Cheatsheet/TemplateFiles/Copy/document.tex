@@ -2,15 +2,13 @@
 % arara: clean: { extensions: [ acn, acr, alg, aux, bbl, bcf, blg, glg, glo, gls, glsdefs, ist, lof, log, lol, lot, out, xml, toc ] }
 % arara: pdflatex: { shell: yes, interaction: nonstopmode }
 
-\documentclass{report}
-\input{./configuration.tex}
-
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/prefix.tex}
+\input{./configuration.tex}
 \begin{center}
 \href{\GRYTUrl}{\huge\GRYTTitle}\\
 \GRYTAuthor
 \end{center}
-\input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/configuration.tex}
+\import{GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked}{configuration.tex}
 
 \import{content}{content.tex}
 
