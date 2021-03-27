@@ -1,15 +1,9 @@
 % !TeX root = ./document.tex
 % arara: clean: { extensions: [ acn, acr, alg, aux, bbl, bcf, blg, glg, glo, gls, glsdefs, ist, lof, log, lol, lot, out, xml, toc ] }
-% arara: pdflatex: { shell: yes, interaction: nonstopmode }
+% arara: pdflatex: { shell: yes, interaction: nonstopmode, options: ['-jobname=Document']}
 
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/prefix.tex}
 \input{./configuration.tex}
-\begin{center}
-\href{\GRYTUrl}{\huge\GRYTTitle}\\
-\GRYTAuthor
-\end{center}
 \import{GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked}{configuration.tex}
-
 \import{content}{content.tex}
-
 \input{./GRYDocumentTemplate/Templates/Cheatsheet/TemplateFiles/Linked/suffix.tex}
