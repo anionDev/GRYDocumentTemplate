@@ -1,3 +1,5 @@
-# Purpose
+# __documenttype__ __name__
 
-This repository contains the sourcecode of the document "__name__".
+## Purpose
+
+This repository contains the sourcecode of the __documenttype__ "__name__".
